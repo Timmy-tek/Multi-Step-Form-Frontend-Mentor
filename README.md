@@ -37,4 +37,4 @@ Users should be able to:
 ## Author
 
 - Frontend Mentor - [@Timmy-tek](https://www.frontendmentor.io/profile/Timmy-tek)
-- Twitter - [@yourusername](https://x.com/Timmy_tekX)
+- Twitter - [@Timmy_tekX](https://x.com/Timmy_tekX)

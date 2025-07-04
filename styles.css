@@ -161,7 +161,7 @@ body{
 .navBtn button:hover{
     background-color: hsl(213, 96%, 32%);
 }
-.clicked{
+.navBtn button.clicked{
     background-color: hsl(213, 83%, 54%);
 }
 
@@ -178,6 +178,15 @@ body{
     flex-direction: column;
     margin-top: 25px;
 }
+.stepOne #notValid{
+    display: none;
+    color: hsl(354, 84%, 57%);
+}
+.stepOne form p{
+    color: hsl(354, 84%, 57%);
+    margin-bottom: 18px;
+    font-size: 10px;
+}
 .stepOne form label{
     font-size: 12px;
     color:  hsl(213, 96%, 18%);
@@ -186,7 +195,6 @@ body{
 .stepOne form input{
     height: 35px;
     padding: 10px;
-    margin-bottom: 18px;
     border: 1px solid hsl(229, 24%, 87%);
     border-radius: 5px;
 }
@@ -198,7 +206,10 @@ body{
     position: relative;
     height: 100%;
 }
-
+.stepTwo #noPickedPlan{
+    display: none;
+    color: hsl(354, 84%, 57%);
+}
 .stepTwo .plan{
     display: flex;
     flex-direction: row;
@@ -303,6 +314,13 @@ body{
     border-radius: 5px;
     gap: 15px;
 }
+.addon.activeChoice{
+    border: 1px solid hsl(213, 96%, 18%);
+    background-color: hsl(218, 100%, 97%);
+}
+.stepThree .addon:hover{
+    border-color: hsl(228, 100%, 84%);
+}
 .stepThree .addon p{
     color: hsl(243, 100%, 62%);
 }
@@ -335,7 +353,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
-.stepFour .plan{
+.stepFour .planChoice{
     display: flex;
     flex-direction: column;
 }

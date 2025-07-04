@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="page">
+    <nav class="sideBar">
+
+      <div class="sideBar-menu">
+        <div class="sideBar-menu-item">
+        <button class="sideBar-menu-item-btn activeStep">1</button>
+        <div class="sideBar-menu-item-txt">
+          <p>  Step 1</p>
+          <h3>  Your info    </h3>
+        </div>
+      </div>
+        <div class="sideBar-menu-item">
+        <button class="sideBar-menu-item-btn">2</button>
+        <div class="sideBar-menu-item-txt">
+          <p>Step 2</p>
+          <h3>Select plan</h3>
+        </div>
+      </div>
+        <div class="sideBar-menu-item">
+        <button class="sideBar-menu-item-btn">3</button>
+        <div class="sideBar-menu-item-txt">
+          <p>Step 3</p>
+          <h3>Add-ons</h3>
+        </div>
+      </div>
+        <div class="sideBar-menu-item">
+        <button class="sideBar-menu-item-btn">4</button>
+        <div class="sideBar-menu-item-txt">
+          <p>Step 4</p>
+          <h3>Summary</h3>
+        </div>
+      </div>
+      </div>
+
+    </nav>
+    <div class="pageContent">
+      <div  class="stepPage stepOne">
+        <h2> Personal info</h2>
+        <p>  Please provide your name, email address, and phone number. </p>
+        <form action="">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="e.g. Stephen King">
+          <label for="email">Email Address</label>
+          <input type="text" id="email" placeholder="e.g. stephenking@lorem.com">
+          <label for="phone">Phone Number</label>
+          <input type="number" id="phone" placeholder="e.g. +1 234 567 890">
+        </form>
+        <div class="navBtn">
+          <button id="trial" class="nextBtn">Next Step</button>
+        </div>
+
+      </div>
+      <div class="stepPage stepTwo">
+        <h2>Select your plan</h2>
+        <p>You have the option of monthly or yearly billing.</p>
+        <div class="plan">
+          <div class="plan-sct">
+            <img src="./assets/images/icon-arcade.svg" alt="">
+            <div class="plan-sct-txt">
+              <h3>Arcade</h3>
+              <div class="plan-sct-txt-time"><p class="month">$9/mo</p><p class="year">$90/yr</p><h6 class="year">2 months free</h6></div>
+            </div>
+          </div>
+          <div class="plan-sct">
+            <img src="./assets/images/icon-advanced.svg" alt="">
+            <div class="plan-sct-txt">
+              <h3>Advanced</h3>
+              <div class="plan-sct-txt-time"><p class="month">$12/mo</p><p class="year">$120/yr</p><h6 class="year">2 months free</h6></div>
+            </div>
+          </div>
+          <div class="plan-sct">
+            <img src="./assets/images/icon-pro.svg" alt="">
+            <div class="plan-sct-txt">
+              <h3>Pro</h3>
+              <div class="plan-sct-txt-time"><p class="month">$15/mo</p><p class="year">$150/yr</p><h6 class="year">2 months free</h6></div>
+            </div>
+          </div>
+        </div>
+        <div class="choose">
+          <p>Monthly</p><div id="mntyrBtn"><div id="mntyrBtnW"></div></div><p>Yearly</p>
+        </div>
+
+        <div class="navBtn">
+          <button class="backBtn">Go Back</button>
+          <button class="nextBtn">Next Step</button>
+        </div>
+      </div>
+      <div class="stepPage stepThree">
+        <h2>Pick add-ons</h2>
+        <p>  Add-ons help enhance your gaming experience.</p>
+        <div class="addons">
+          <label class="addon" id="lOnline">
+            <input type="checkbox" id="online">
+            <div>
+            <h3>Online service</h3>
+            <p>Access to multiplayer games</p>
+            </div>
+            <p class="month">+$1/mo</p><p class="year">+$10/yr</p>
+          </label>
+          <label class="addon" id="lStorage">
+            <input type="checkbox" id="storage">
+            <div>
+            <h3>Larger storage</h3>
+            <p>Extra 1TB of cloud save</p>
+            </div>
+            <p class="month">+$2/mo</p><p class="year">+$20/yr</p>
+          </label>
+          <label class="addon" id="lProfile">
+            <input type="checkbox" id="profile">
+            <div>
+            <h3>Customizable Profile</h3>
+            <p>Custom theme on your profile</p>
+            </div>
+            <p class="month">+$2/mo</p><p class="year">+$20/yr</p>
+          </label>
+        </div>
+        <div class="navBtn">
+          <button class="backBtn">Go Back</button>
+          <button class="nextBtn">Next Step</button>
+        </div>
+        
+      </div>
+      <div class="stepPage stepFour">
+        <h2>Finishing up</h2>
+        <p>Double-check everything looks OK before confirming./<p>
+        <div class="content">
+          <div class="choice">
+            <div class="plan">
+              <h3 id="plan">lorem</h3>
+              <p id="change" style="text-decoration: underline;">Change</p>
+            </div>
+            <h3 id="planCost">$lorem</h3>
+          </div>
+          <hr>
+          <div class="addons" id="online">
+            <p class="addon">Online service</p> 
+            <p class="price">+$1/mo</p>
+          </div>
+          <div class="addons" id="larger">
+            <p class="addon">Larger storage</p> 
+            <p class="price">+$2/mo</p>
+          </div>
+          <div class="addons" id="profile">
+            <p class="addon">Customizable profile</p> 
+            <p class="price">+$2/mo</p>
+          </div>
+        </div>
+        <div class="total">
+          <p class="mon-yr">Total (per month)</p>
+          <h3 id="price" class="price">0</h3>
+        </div>
+
+        <div class="navBtn">
+          <button class="backBtn">Go Back</button>
+          <button class="nextBtn">Next Step</button>
+        </div>
+      </div>
+      <div class="stepPage stepFive">
+        <div>
+          <img src="./assets/images/icon-thank-you.svg" alt="Thank You">
+          <h2>Thank you!</h2>
+          <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+        </div>
+      </div>
+  
+    </div>
+
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

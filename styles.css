@@ -427,9 +427,6 @@ body{
 
 
 @media (max-width: 600px) {
-    body{
-
-    }
     .page{
         flex-direction: column;
         width: 100%;

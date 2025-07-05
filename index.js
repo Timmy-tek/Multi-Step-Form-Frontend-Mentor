@@ -31,6 +31,8 @@ const change = document.getElementById('change');
 const months = document.querySelectorAll('.month');
 const years = document.querySelectorAll('.year');
 
+const monthly = document.getElementById('monthly');
+const yearly = document.getElementById('yearly');
 const mntyrBtn = document.getElementById('mntyrBtn');
 const mntyrBtnW = document.getElementById('mntyrBtnW');
 let mntyrBtnClicked = false;
@@ -480,13 +482,14 @@ change.addEventListener('click', ()=>{
 
 mntyrBtn.addEventListener('click', () => {
     mntyrBtnClicked = !mntyrBtnClicked;
-    console.log(`CLicked iss ${mntyrBtnClicked}`);
     if(mntyrBtnClicked){
-        console.log('shi was clicked', mntyrBtnClicked);
         displayYear();
+        yearly.style.color = 'hsl(213, 96%, 18%)'
+        monthly.style.color = 'hsl(231, 11%, 63%)'
     }else{
-        console.log('shi wasnt', mntyrBtnClicked);
         displayMonth();
+        yearly.style.color = 'hsl(231, 11%, 63%)'
+        monthly.style.color = 'hsl(213, 96%, 18%)'
     }
     mntyrBtnW.classList.toggle("switch");
     console.log("Clicked");

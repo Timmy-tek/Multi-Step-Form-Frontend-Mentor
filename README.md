@@ -22,6 +22,9 @@ Users should be able to:
 
 ### Links
 
+- Solution URL: (https://github.com/Timmy-tek/Multi-Step-Form-Frontend-Mentor)
+- Live Site URL:  (https://multi-step-form-by-frontend-mentor.netlify.app/)
+
 
 ## My process
 

@@ -48,8 +48,9 @@ body{
 
 .page{
     display: flex;
+    flex-direction: row;
     background-color: white;
-    width: 730px;
+    width: 740px;
     height: 470px;
     padding: 15px;
     border-radius: 12px;
@@ -60,7 +61,7 @@ body{
     background-image: url(./assets/images/bg-sidebar-desktop.svg);
     background-size: 100%; 
     background-repeat: no-repeat;
-    background-color: red;
+    /* background-color: red; */
     width: 213px;
     border-radius: 10px;
     display: flex;
@@ -80,8 +81,8 @@ body{
     gap: 12px;
 }
 .sideBar-menu-item-btn{
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border: 1px solid white;
     background-color: hsla(206, 94%, 87%, 0);
     border-radius: 50%; 
@@ -89,10 +90,18 @@ body{
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 10px;
+    font-size: 14px;
+    font-family: "bold", sans-serif;
 }
-.activeStep{
+.sideBar-menu-item-btn:hover{
+    background-color: hsla(206, 94%, 87%, 0.145);
+}
+.sideBar-menu-item-btn.activeStep{
     background-color: hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+}
+.sideBar-menu-item-btn.clicked{
+    background-color: hsl(206, 100%, 96%);
 }
 
 
@@ -116,11 +125,12 @@ body{
 /* to display page content */
 .pageContent{
     flex: 1;
-    padding: 0 70px;
+    padding: 0 56px;
     padding-top: 35px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 .pageContent h2{
     font-size: 25px;
@@ -139,7 +149,7 @@ body{
     margin-top: 5px;
 }
 .pageContent p{
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-family: "regular";
     color:  hsl(231, 11%, 63%);
 }
@@ -155,17 +165,36 @@ body{
     height: 35px;
     border: none;
     border-radius: 5px;
+}
+.navBtn .nextBtn{
     background-color: hsl(213, 96%, 18%);
     color: white;
 }
-.navBtn button:hover{
+.navBtn .backBtn{
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(231, 11%, 63%);
+}
+.navBtn .nextBtn:hover{
     background-color: hsl(213, 96%, 32%);
 }
-.navBtn button.clicked{
-    background-color: hsl(213, 83%, 54%);
+.navBtn .nextBtn.clicked{
+    background-color: hsl(213, 100%, 40%);
+}
+.navBtn .backBtn:hover{
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(231, 6%, 45%);
+}
+.navBtn .backBtn.clicked{
+    background-color: hsl(0, 0%, 53%);
+    color: hsl(234, 6%, 32%);
 }
 
-
+.stepPage .info{
+    height: 39px;
+}
+.stepPage span{
+    font-size: 13px;
+}
 
 .stepOne{
     display: flex;
@@ -176,27 +205,36 @@ body{
 .stepOne form{
     display: flex;
     flex-direction: column;
-    margin-top: 25px;
 }
 .stepOne #notValid{
     display: none;
     color: hsl(354, 84%, 57%);
 }
+.stepOne form div{
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+}
 .stepOne form p{
     color: hsl(354, 84%, 57%);
-    margin-bottom: 18px;
-    font-size: 10px;
+    /* margin-bottom: 18px; */
+    margin-top: 4px;
+    font-size: 12px;
 }
 .stepOne form label{
-    font-size: 12px;
+    font-size: 13px;
     color:  hsl(213, 96%, 18%);
     margin-bottom: 5px;
+    font-family: "medium";
 }
 .stepOne form input{
     height: 35px;
     padding: 10px;
     border: 1px solid hsl(229, 24%, 87%);
     border-radius: 5px;
+}
+.stepOne .navBtn{
+    justify-content: flex-end;
 }
 
 
@@ -214,7 +252,6 @@ body{
     display: flex;
     flex-direction: row;
     gap: 15px;
-    margin-top: 30px;
 }
 
 .stepTwo .plan-sct{
@@ -296,7 +333,6 @@ body{
     height: 100%;
 }
 .stepThree .addons{
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -314,7 +350,7 @@ body{
     border-radius: 5px;
     gap: 15px;
 }
-.addon.activeChoice{
+.stepThree .addon.activeChoice{
     border: 1px solid hsl(213, 96%, 18%);
     background-color: hsl(218, 100%, 97%);
 }
@@ -357,6 +393,9 @@ body{
     display: flex;
     flex-direction: column;
 }
+.stepFour #noPickedAddons{
+    display: none;
+}
 .stepFour .addons{
     display: none;
     flex-direction: row;
@@ -379,4 +418,101 @@ body{
     height: 100%;
     align-items: center;
     justify-content: center;
+}
+
+
+
+
+@media (max-width: 600px) {
+    body{
+
+    }
+    .page{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        border-radius: 0%;
+        padding: 0%;
+        align-items: center;
+        background-color: #EEF5FF;
+
+    }
+    .sideBar{
+        width: 100%;
+        border-radius: 0%;
+        background-size: cover;
+        background-position: center -536px;
+        height: 170px;
+        justify-content:  center;
+    }
+    .sideBar-menu{
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        justify-content:  center;
+
+    }
+    .sideBar-menu-item{
+        width: fit-content;
+    }
+    .sideBar-menu-item-txt{
+        display: none;
+    }
+
+    .pageContent{
+        position: absolute;
+        width: 340px;
+        padding: 30px 20px;
+        padding-bottom: 35px;
+        border-radius: 10px;
+        top: 95px;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.08); 
+    }
+    .stepPage .info{
+        font-size: 16.5px;
+    }
+    .navBtn{
+        top: 490px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 318px;
+    }
+    .navBtn button{
+        width: 90px;
+    }
+    .stepPage .info{
+        height: 65px;
+    }
+    .stepOne form div{
+        height: 92px;
+    }
+
+    .stepTwo .plan{
+        flex-direction: column;
+    }
+    .stepTwo .plan-sct{
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+        height: 75px;
+        align-items: center;
+    }
+    .stepTwo .plan-sct img{
+        width: 40px;
+        height: 40px;
+        margin: 0%;
+    }
+    .stepTwo .plan-sct-txt h3{
+        margin-bottom: 0px;
+    }
+
+
+    .stepThree .addon{
+        gap: 0px;
+    }
+    .stepThree .addon div{
+        margin-left: 10px;
+    }
 }

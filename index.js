@@ -24,6 +24,7 @@ const planCost = document.getElementById('planCost');
 const addonSects = document.querySelectorAll('.stepThree .addon');
 const addonBoxes = document.querySelectorAll('.addon input')
 
+const noPickedAddons = document.getElementById('noPickedAddons');
 const addonConfim = document.querySelectorAll('.stepFour .addons');
 
 const change = document.getElementById('change');
@@ -41,6 +42,8 @@ let storagePrice = 0;
 let profilePrice = 0;
 
 let pickedPlan = false;
+
+let pickedAddon = false;
 
 
 
@@ -136,9 +139,6 @@ function addonSectsDefault(){
     })
 }
 
-
-
-
 function displayMonth(){
     addonSectsDefault();
     planSctsDefault();
@@ -180,6 +180,10 @@ steps.forEach(step => {
         steps.forEach(step =>
             step.classList.remove('activeStep')
         );
+        step.classList.add('clicked')
+        setTimeout(() => {
+            step.classList.remove('clicked')
+        }, 100);
         step.classList.add('activeStep')
     });
 });
@@ -207,7 +211,22 @@ steps[1].addEventListener('click', ()=>{
     } 
 });
 steps[2].addEventListener('click', ()=>{
-    if(pickedPlan){
+    validDetails();
+    if(!validatedDetails){
+        steps.forEach(step =>
+            step.classList.remove('activeStep')
+        );
+        steps[0].classList.add('activeStep');
+        notValid.style.display = 'flex';
+    }else if(!pickedPlan){
+        notDisplay();
+        stepTwoDisplay();
+        steps.forEach(step =>
+            step.classList.remove('activeStep')
+        );
+        steps[1].classList.add('activeStep');
+        noPickedPlan.style.display = 'flex';
+    }else{
         notDisplay();
         stepThreeDisplay();
         
@@ -215,22 +234,50 @@ steps[2].addEventListener('click', ()=>{
             step.classList.remove('activeStep')
         );
         steps[2].classList.add('activeStep');
-    }else{
+        notValid.style.display = 'none';
+        noPickedPlan.style.display = 'none';
+    }
+
+});
+steps[3].addEventListener('click', ()=>{
+    validDetails();
+    if(!validatedDetails){
+        steps.forEach(step =>
+            step.classList.remove('activeStep')
+        );
+        steps[0].classList.add('activeStep');
+        notValid.style.display = 'flex';
+    }else if(!pickedPlan){
+        notDisplay();
+        stepTwoDisplay();
         steps.forEach(step =>
             step.classList.remove('activeStep')
         );
         steps[1].classList.add('activeStep');
         noPickedPlan.style.display = 'flex';
+    }else{
+        noPickedAddons.style.display = 'none';
+        notValid.style.display = 'none';
+        noPickedPlan.style.display = 'none';
+        notDisplay();
+        stepFourDisplay();
+        steps.forEach(step =>
+            step.classList.remove('activeStep')
+        );
+        steps[3].classList.add('activeStep');
     }
-});
-steps[3].addEventListener('click', ()=>{
-    notDisplay();
-    stepFourDisplay();
+
+    if(addonBoxes[0].checked || addonBoxes[1].checked || addonBoxes[2].checked ){
+        noPickedAddons.style.display = 'none';
+    }else{
+        noPickedAddons.style.display = 'flex';
+    }
 });
 
 
 nextBtns[0].addEventListener('click', () =>{
     validDetails();
+    nextBtnClicked();
     if(validatedDetails){
         notDisplay();
         stepTwoDisplay();
@@ -238,6 +285,7 @@ nextBtns[0].addEventListener('click', () =>{
             step.classList.remove('activeStep')
         );
         steps[1].classList.add('activeStep');
+        notValid.style.display = 'none';
     }else{
         steps.forEach(step =>
             step.classList.remove('activeStep')
@@ -245,7 +293,6 @@ nextBtns[0].addEventListener('click', () =>{
         steps[0].classList.add('activeStep');
         notValid.style.display = 'flex';
     }
-    nextBtnClicked();
 
 })
 nextBtns[1].addEventListener('click', () =>{
@@ -257,6 +304,7 @@ nextBtns[1].addEventListener('click', () =>{
             step.classList.remove('activeStep')
         );
         steps[2].classList.add('activeStep');
+        noPickedPlan.style.display = 'none';
     }else{
         steps.forEach(step =>
             step.classList.remove('activeStep')
@@ -267,6 +315,11 @@ nextBtns[1].addEventListener('click', () =>{
     nextBtnClicked();
 })
 nextBtns[2].addEventListener('click', () =>{
+    if(addonBoxes[0].checked || addonBoxes[1].checked || addonBoxes[2].checked ){
+        noPickedAddons.style.display = 'none';
+    }else{
+        noPickedAddons.style.display = 'flex';
+    }
     nextBtnClicked();
     notDisplay();
     stepFourDisplay();
@@ -275,7 +328,8 @@ nextBtns[2].addEventListener('click', () =>{
     steps.forEach(step =>
         step.classList.remove('activeStep')
     );
-    steps[3].classList.add('activeStep')
+    steps[3].classList.add('activeStep');
+    nextBtnClicked();
 })
 nextBtns[3].addEventListener('click', () =>{
     nextBtnClicked();

@@ -468,6 +468,7 @@ body{
         border-radius: 10px;
         top: 95px;
         box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.08); 
+        min-height: 385px;
     }
     .stepPage .info{
         font-size: 16.5px;
@@ -514,5 +515,20 @@ body{
     }
     .stepThree .addon div{
         margin-left: 10px;
+    }
+    .stepFive{
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        height: 100%;
+    }
+    .stepFive div{
+        margin-top: 40px;
+    }
+    .stepFive img{
+        width: 60px;
+        height: 60px;
+        margin: 0%;
+        margin-bottom: 20px;
     }
 }
